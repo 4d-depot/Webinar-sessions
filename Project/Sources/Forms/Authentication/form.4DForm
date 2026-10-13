@@ -1,0 +1,218 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 860,
+	"windowMinHeight": 560,
+	"windowMaxWidth": 980,
+	"windowMaxHeight": 620,
+	"width": 980,
+	"height": 620,
+	"rightMargin": 24,
+	"bottomMargin": 24,
+	"events": [
+		"onLoad",
+		"onCloseBox"
+	],
+	"windowTitle": "Authentication",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {
+				"bgContent": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 980,
+					"height": 620,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"stroke": "transparent",
+					"fill": "#FFFFFF"
+				}
+			}
+		},
+		{
+			"objects": {
+				"bgAuthCard": {
+					"type": "rectangle",
+					"top": 110,
+					"left": 50,
+					"width": 880,
+					"height": 450,
+					"stroke": "#C8D5EC",
+					"fill": "#F8FAFC",
+					"borderRadius": 14
+				},
+				"txtIdentifierLabel": {
+					"type": "text",
+					"top": 140,
+					"left": 250,
+					"width": 220,
+					"height": 20,
+					"text": "Identifier",
+					"fontSize": 20,
+					"fontWeight": "bold",
+					"fontFamily": "Avenir Next",
+					"stroke": "#5C8BF0",
+					"fill": "transparent"
+				},
+				"txtPasswordLabel": {
+					"type": "text",
+					"top": 236,
+					"left": 250,
+					"width": 220,
+					"height": 20,
+					"text": "Password",
+					"fontSize": 20,
+					"fontWeight": "bold",
+					"fontFamily": "Avenir Next",
+					"stroke": "#5C8BF0",
+					"fill": "transparent"
+				},
+				"btnLogin": {
+					"type": "button",
+					"text": "Login",
+					"top": 370,
+					"left": 290,
+					"width": 150,
+					"height": 40,
+					"style": "regular",
+					"fill": "#5B3DF5",
+					"stroke": "#5C8BF0",
+					"borderStyle": "none",
+					"borderRadius": 10,
+					"fontSize": 18,
+					"fontFamily": "Avenir Next Medium",
+					"fontWeight": "normal",
+					"textColor": "#FFFFFF",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/btnLogin.4dm",
+					"focusable": false,
+					"imageHugsTitle": true
+				},
+				"WrongCredentials": {
+					"type": "text",
+					"top": 460,
+					"left": 50,
+					"width": 880,
+					"height": 30,
+					"fontSize": 18,
+					"fontFamily": "Avenir Next",
+					"stroke": "#E11D48",
+					"fill": "transparent",
+					"dataSource": "Form.successMessage",
+					"visibility": "hidden",
+					"text": "Wrong credentials",
+					"fontWeight": "bold",
+					"textAlign": "center"
+				},
+				"btnLogin1": {
+					"type": "button",
+					"text": "Quit",
+					"top": 370,
+					"left": 470,
+					"width": 150,
+					"height": 40,
+					"style": "regular",
+					"fill": "#5B3DF5",
+					"stroke": "#667085",
+					"borderStyle": "none",
+					"borderRadius": 10,
+					"fontSize": 18,
+					"fontFamily": "Avenir Next Medium",
+					"fontWeight": "normal",
+					"textColor": "#FFFFFF",
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/btnLogin1.4dm",
+					"focusable": false
+				},
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 170,
+					"left": 230,
+					"width": 500,
+					"height": 50,
+					"borderRadius": 20,
+					"stroke": "#DFE8F8",
+					"fill": "transparent"
+				},
+				"inputIdentifier": {
+					"type": "input",
+					"top": 180,
+					"left": 250,
+					"width": 400,
+					"height": 30,
+					"fill": "transparent",
+					"stroke": "#667085",
+					"borderColor": "#E5E7EB",
+					"fontSize": 18,
+					"fontFamily": "Avenir Next",
+					"dataSource": "Form:C1466.credentials.identifier",
+					"hideFocusRing": true,
+					"borderStyle": "none"
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 270,
+					"left": 230,
+					"width": 500,
+					"height": 50,
+					"borderRadius": 20,
+					"stroke": "#DFE8F8",
+					"fill": "transparent"
+				},
+				"inputIdentifier1": {
+					"type": "input",
+					"top": 284,
+					"left": 250,
+					"width": 400,
+					"height": 30,
+					"fill": "transparent",
+					"stroke": "#667085",
+					"borderColor": "#E5E7EB",
+					"fontSize": 18,
+					"fontFamily": "Avenir Next",
+					"dataSource": "Form:C1466.credentials.password",
+					"hideFocusRing": true,
+					"borderStyle": "none",
+					"enterable": false,
+					"focusable": false,
+					"placeholder": "*"
+				},
+				"txtOrdersLabel2": {
+					"type": "text",
+					"top": 60,
+					"left": 0,
+					"width": 980,
+					"height": 20,
+					"text": "Who are you?",
+					"fontSize": 28,
+					"fontWeight": "normal",
+					"fontFamily": "Avenir Next Medium",
+					"stroke": "#667085",
+					"fill": "transparent",
+					"textAlign": "center"
+				}
+			},
+			"entryOrder": []
+		}
+	],
+	"geometryStamp": 766,
+	"formClass": "AuthenticationFormClass",
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	},
+	"method": "method.4dm"
+}

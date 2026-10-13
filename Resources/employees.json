@@ -1,0 +1,28 @@
+[
+  {
+    "firstname": "Emma",
+    "lastname": "Durand",
+    "email": "emma.durand@4d.com",
+    "role": "SalesPeople",
+    "allowedDiscount": 10
+  },
+  {
+    "firstname": "Lucas",
+    "lastname": "Martin",
+    "email": "lucas.martin@4d.com",
+    "role": "SalesPeople",
+    "allowedDiscount": 20
+  },
+  {
+    "firstname": "Nora",
+    "lastname": "Bernard",
+    "email": "nora.bernard@4d.com",
+    "role": "Packer"
+  },
+  {
+    "firstname": "Hugo",
+    "lastname": "Moreau",
+    "email": "hugo.moreau@4d.com",
+    "role": "Packer"
+  }
+]

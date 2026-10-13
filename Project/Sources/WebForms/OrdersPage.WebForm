@@ -1,0 +1,214 @@
+{
+	"metadata": {
+		"v": "1.0",
+		"datasources": [
+			{
+				"id": "employee",
+				"type": "entity",
+				"dataclass": "Employees",
+				"initialValue": "",
+				"depth": null
+			}
+		],
+		"styles": [
+			{
+				"name": "cartStyleRow",
+				"content": "self {\n  background-color : #ffffffff;\n  box-shadow : 0px 0px 6px 0px #00000023;\n\twidth: 1100px;\n  display : flex;\n  align-items : center;\n  justify-content : space-between;\n  gap : 10px;\n  margin-top : 0px;\n  border-width : 1px;\n  border-radius : 20px;\n\tborder-color: #d0d1d0ff;\n\t}",
+				"parentId": null,
+				"scope": "local",
+				"id": "sj3MOCtyuiUF_gRpwPBh-"
+			}
+		],
+		"currentState": "root"
+	},
+	"components": {
+		"ROOT": {
+			"type": {
+				"resolvedName": "Container"
+			},
+			"isCanvas": true,
+			"props": {
+				"classNames": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "SessionHelper",
+						"events": [
+							"oninit"
+						],
+						"id": "8wdLEeTwuhpfS8vZRQWc8z",
+						"method": "SessionHelper.loadEmployee",
+						"params": [],
+						"datasource": "",
+						"methodType": "singleton",
+						"returns": {
+							"name": "result",
+							"type": "cs.EmployeesEntity",
+							"datasource": "employee"
+						}
+					}
+				],
+				"airyMode": false,
+				"className": "bg-white w-full px-6",
+				"style": {
+					"paddingTop": "0px"
+				}
+			},
+			"displayName": "Page",
+			"custom": {},
+			"parent": "",
+			"hidden": false,
+			"nodes": [
+				"YLrtB_Z2nZ",
+				"gcYv3U3t4x"
+			],
+			"linkedNodes": {}
+		},
+		"gcYv3U3t4x": {
+			"type": {
+				"resolvedName": "WebformLoader"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"webform": "Orders",
+				"style": {
+					"height": "100%",
+					"width": "1200px"
+				}
+			},
+			"displayName": "Page Loader",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"YLrtB_Z2nZ": {
+			"type": {
+				"resolvedName": "StyleBox"
+			},
+			"isCanvas": true,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"style": {},
+				"classNames": [
+					"cartStyleRow"
+				]
+			},
+			"displayName": "Stylebox",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [
+				"0UQ07SMJEy",
+				"qep-fXHejG"
+			],
+			"linkedNodes": {}
+		},
+		"0UQ07SMJEy": {
+			"type": {
+				"resolvedName": "Text"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"iterableChild": true,
+				"doc": [
+					{
+						"type": "paragraph",
+						"children": [
+							{
+								"text": "Welcome ",
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false
+							},
+							{
+								"type": "datasource",
+								"datasource": "employee.fullname",
+								"children": [
+									{
+										"bold": true,
+										"italic": false,
+										"underlined": false,
+										"strikethrough": false,
+										"text": "fullname"
+									}
+								],
+								"dsType": "string",
+								"format": ""
+							},
+							{
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false,
+								"text": " ("
+							},
+							{
+								"type": "datasource",
+								"datasource": "employee.role",
+								"children": [
+									{
+										"bold": false,
+										"italic": false,
+										"underlined": false,
+										"strikethrough": false,
+										"text": "position"
+									}
+								],
+								"dsType": "string",
+								"format": ""
+							},
+							{
+								"bold": false,
+								"italic": false,
+								"underlined": false,
+								"strikethrough": false,
+								"text": ")"
+							}
+						]
+					}
+				],
+				"datasource": "employee.fullname,employee.role"
+			},
+			"displayName": "Text",
+			"custom": {
+				"__t": {
+					"doc": []
+				}
+			},
+			"parent": "YLrtB_Z2nZ",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		},
+		"qep-fXHejG": {
+			"type": {
+				"resolvedName": "Image"
+			},
+			"isCanvas": false,
+			"props": {
+				"classNames": [],
+				"events": [],
+				"style": {
+					"borderRadius": "50%",
+					"width": "80px",
+					"height": "80px",
+					"maxWidth": "80px",
+					"maxHeight": "80px"
+				},
+				"datasource": "employee.photo"
+			},
+			"displayName": "Image",
+			"custom": {},
+			"parent": "YLrtB_Z2nZ",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		}
+	}
+}

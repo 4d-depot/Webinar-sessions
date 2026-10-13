@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Headphones",
+    "price": 89,
+    "description1": "Premium sound, ANC.",
+    "description2": "Noise reduction, microphone.",
+    "quantityInStock": 10
+  },
+  {
+    "name": "Keyboard",
+    "price": 129,
+    "description1": "Perfect typing.",
+    "description2": "Responsive tactile switches.",
+    "quantityInStock": 0
+  },
+  {
+    "name": "Hub",
+    "price": 49,
+    "description1": "Total connectivity.",
+    "description2": "7-in-1, all your devices.",
+    "quantityInStock": 20
+  },
+  {
+    "name": "Mouse",
+    "price": 65,
+    "description1": "Ergonomic comfort.",
+    "description2": "Natural grip, less fatigue.",
+    "quantityInStock": 5
+  },
+  {
+    "name": "Screen Stand",
+    "price": 45,
+    "description1": "Adjustable screen stand.",
+    "description2": "Aluminum, for any screen.",
+    "quantityInStock": 100
+  },
+  {
+    "name": "Webcam",
+    "price": 75,
+    "description1": "Clear image.",
+    "description2": "1080p, autofocus, microphone.",
+    "quantityInStock": 50
+  },
+  {
+    "name": "Lamp",
+    "price": 38,
+    "description1": "Adaptive lighting.",
+    "description2": "Touch control, adjustable color.",
+    "quantityInStock": 30
+  },
+  {
+    "name": "Battery",
+    "price": 55,
+    "description1": "Fast charging.",
+    "description2": "20,000 mAh, high capacity.",
+    "quantityInStock": 40
+  },
+  {
+    "name": "Laptop Stand",
+    "price": 79,
+    "description1": "Ergonomic support.",
+    "description2": "For laptops.",
+    "quantityInStock": 15
+  },
+  {
+    "name": "Device Stand",
+    "price": 42,
+    "description1": "Adjustable stand.",
+    "description2": "For all mobile devices.",
+    "quantityInStock": 25
+  },
+  {
+    "name": "Charging Station",
+    "price": 99,
+    "description1": "Multi-device charging.",
+    "description2": "Charge up to 6 devices.",
+    "quantityInStock": 12
+  },
+  {
+    "name": "Adapter",
+    "price": 35,
+    "description1": "Universal connector.",
+    "description2": "USB-C to HDMI, VGA, USB.",
+    "quantityInStock": 35
+  },
+  {
+    "name": "Bluetooth Speaker",
+    "price": 69,
+    "description1": "Immersive sound.",
+    "description2": "12-hour battery, IP67 waterproof.",
+    "quantityInStock": 18
+  },
+  {
+    "name": "USB Drive",
+    "price": 28,
+    "description1": "Portable storage.",
+    "description2": "256 GB, USB 3.0 speed.",
+    "quantityInStock": 50
+  },
+  {
+    "name": "Mouse Pad",
+    "price": 22,
+    "description1": "Optimized surface.",
+    "description2": "Reduced friction, non-slip.",
+    "quantityInStock": 60
+  }
+]

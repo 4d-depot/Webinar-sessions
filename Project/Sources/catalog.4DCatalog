@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="Webinar sessions" uuid="2D4F6103DC084198BFC0283C03D0A0B2" collation_locale="en">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="(INFO)" uuid="107A367EBCC346259FD971E8FC1097DA" id="1" hide_in_REST="true">
+		<field name="ID" uuid="C6DBB917EEE44AF9BDA57ABA22C55C6B" type="4" unique="true" autosequence="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="Description" uuid="C9EFE648E9234AADA33FB25D61C0190B" type="10" never_null="true" id="2">
+			<field_extra position="4"/>
+		</field>
+		<field name="TabTitle" uuid="58AF214936C941439CB263026A5B46ED" type="10" limiting_length="255" never_null="true" id="3">
+			<field_extra position="3"/>
+		</field>
+		<field name="PageNumber" uuid="A2D86BBFD5134D06999CBDD14FD07A27" type="4" never_null="true" id="4">
+			<field_extra position="2"/>
+		</field>
+		<primary_key field_name="ID" field_uuid="C6DBB917EEE44AF9BDA57ABA22C55C6B"/>
+		<table_extra input_form="Input" output_form="Output" trashed="true">
+			<editor_table_info fields_ordering="2" displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="0" top="0" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Employees" uuid="33443547373131344544313935323939" id="2">
+		<field name="ID" uuid="44374543433032384646463535424730" type="4" unique="true" autosequence="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="firstname" uuid="45384644443133394747473636434831" type="10" limiting_length="255" never_null="true" id="2">
+			<field_extra position="2"/>
+		</field>
+		<field name="lastname" uuid="46395645453234394848484737545941" type="10" limiting_length="255" id="3">
+			<field_extra position="3"/>
+		</field>
+		<field name="email" uuid="47406656463335305949495848565A42" type="10" limiting_length="255" id="4">
+			<field_extra position="4"/>
+		</field>
+		<field name="photo" uuid="48517667474436315A4A4A494956564C" type="12" id="5">
+			<field_extra position="5"/>
+		</field>
+		<field name="role" uuid="4952776848574732334B4B4B4A575764" type="10" limiting_length="50" id="6">
+			<field_extra position="6"/>
+		</field>
+		<field name="userId" uuid="1648855FB6B2428CA3BA48E77C3721B2" type="4" never_null="true" id="7"/>
+		<field name="allowedDiscount" uuid="244E2D4367294731AC46CDCC98B5CCDF" type="3" never_null="true" id="8"/>
+		<primary_key field_name="ID" field_uuid="44374543433032384646463535424730"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="9">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="597.61328125" top="45.5" width="316.7890625" height="237.4140625"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Products" uuid="55555555666666667777777788888888" id="3">
+		<field name="ID" uuid="AAAAAAAAAAAABBBBBBBBBBBBCCCCCCCC" type="4" unique="true" autosequence="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="name" uuid="DDDDDDDDDDDDEEEEEEEEEEEEFFFFFFFF" type="10" limiting_length="255" never_null="true" id="2">
+			<field_extra position="2"/>
+		</field>
+		<field name="price" uuid="44444444444455555555555566666666" type="6" id="3">
+			<field_extra position="3"/>
+		</field>
+		<field name="quantityInStock" uuid="77777777777777778888888888888888" type="3" id="4">
+			<field_extra position="4"/>
+		</field>
+		<field name="picture" uuid="FD98F31C1B77474699D728CAA659CDAA" type="12" never_null="true" id="5"/>
+		<primary_key field_name="ID" field_uuid="AAAAAAAAAAAABBBBBBBBBBBBCCCCCCCC"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="7">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="152.375" top="518.046875" width="236.09765625" height="205.94140625"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Users" uuid="FDA2DF8AC6F74E358F9BD22F7A8E789A" id="4">
+		<field name="ID" uuid="D244638E2F6E4877B09BEF88CBE372C0" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="identifier" uuid="9D9911F795ED4B71B855AB210D8C512D" type="10" limiting_length="255" never_null="true" id="2"/>
+		<field name="password" uuid="1917DCC415344691A69DBBD5CFD002C7" type="10" limiting_length="255" never_null="true" id="3"/>
+		<primary_key field_name="ID" field_uuid="D244638E2F6E4877B09BEF88CBE372C0"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="4">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="192" top="9" width="169" height="137.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Orders" uuid="99999999AAAAAAAA00000000BBBBBBBB" id="5">
+		<field name="ID" uuid="11111111111122222222222233333333" type="4" unique="true" autosequence="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="orderDate" uuid="BBBBBBBBBBBBCCCCCCCCCCCCDDDDDDDD" type="8" never_null="true" id="2">
+			<field_extra position="2"/>
+		</field>
+		<field name="salesId" uuid="2452108B4A9D4C619A71324C6B3BB4D9" type="4" never_null="true" id="4"/>
+		<field name="packerId" uuid="FDE18AC19D7C44DB8BE24636D558BBA0" type="4" never_null="true" id="5"/>
+		<primary_key field_name="ID" field_uuid="11111111111122222222222233333333"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="7">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="1097.4921875" top="408.6328125" width="298.296875" height="199.82421875"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="Ordering" uuid="46464646464646463030303030303030" id="6">
+		<field name="ID" uuid="33333333333344444444444455555555" type="4" unique="true" autosequence="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="orderID" uuid="66666666666677777777777788888888" type="4" never_null="true" id="2">
+			<field_extra position="2"/>
+		</field>
+		<field name="productID" uuid="99999999999900000000000011111111" type="4" never_null="true" id="3">
+			<field_extra position="3"/>
+		</field>
+		<field name="quantity" uuid="AAAAAAAAAAAAABBBBBBBBBBBCCCCCCCC" type="3" never_null="true" id="4">
+			<field_extra position="4"/>
+		</field>
+		<field name="appliedDiscount" uuid="4289C25C6F064E4AB2F93F6FA74E8DB3" type="6" never_null="true" id="5"/>
+		<primary_key field_name="ID" field_uuid="33333333333344444444444455555555"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="5">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="634.80078125" top="476.921875" width="300" height="180"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="(MailCredentials)" uuid="0669BE50092E4F8DAF2270347F00E759" id="7" hide_in_REST="true">
+		<field name="ID" uuid="D894794B0A2F4403B6CA758EC7CC1956" type="4" unique="true" autosequence="true" not_null="true" id="1">
+			<field_extra position="1"/>
+		</field>
+		<field name="clientSecret" uuid="7E218CD9D035497CA2459A99A212AAB2" type="10" limiting_length="255" never_null="true" id="2">
+			<field_extra position="3"/>
+		</field>
+		<field name="clientId" uuid="D811B02C61BB4071A413E6D1C9247101" type="10" limiting_length="255" never_null="true" id="3">
+			<field_extra position="2"/>
+		</field>
+		<primary_key field_name="ID" field_uuid="D894794B0A2F4403B6CA758EC7CC1956"/>
+		<table_extra trashed="true">
+			<editor_table_info fields_ordering="2" displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="37.0234375" top="203.5234375" width="194.06640625" height="174.0234375"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<table name="(Token)" uuid="D1AC304DA99F4E8D8318D30FD3F860CF" id="8" hide_in_REST="true">
+		<field name="ID" uuid="1638CE980E7C43538715137E5A019E73" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="theToken" uuid="2D93317AF89E41B09ED88B893C2C125E" type="21" blob_switch_size="2147483647" never_null="true" id="2"/>
+		<primary_key field_name="ID" field_uuid="1638CE980E7C43538715137E5A019E73"/>
+		<table_extra trashed="true">
+			<editor_table_info displayable_fields_count="6">
+				<color red="255" green="255" blue="255" alpha="0"/>
+				<coordinates left="0" top="398.80078125" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<relation uuid="2E710B4C4A6D4774AC11E41C0F1CA252" name_Nto1="user" name_1toN="employees" state="1">
+		<related_field kind="source">
+			<field_ref uuid="1648855FB6B2428CA3BA48E77C3721B2" name="userId">
+				<table_ref uuid="33443547373131344544313935323939" name="Employees"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="D244638E2F6E4877B09BEF88CBE372C0" name="ID">
+				<table_ref uuid="FDA2DF8AC6F74E358F9BD22F7A8E789A" name="Users"/>
+			</field_ref>
+		</related_field>
+		<relation_extra>
+			<editor_relation_info>
+				<color red="255" green="255" blue="255" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="B790F51357754C34ADCC695AD7370111" name_Nto1="salesPeople" name_1toN="mySalesOrders" state="1">
+		<related_field kind="source">
+			<field_ref uuid="2452108B4A9D4C619A71324C6B3BB4D9" name="salesId">
+				<table_ref uuid="99999999AAAAAAAA00000000BBBBBBBB" name="Orders"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="44374543433032384646463535424730" name="ID">
+				<table_ref uuid="33443547373131344544313935323939" name="Employees"/>
+			</field_ref>
+		</related_field>
+		<relation_extra>
+			<editor_relation_info>
+				<color red="255" green="255" blue="255" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="34473933324436453643384636393936" name_Nto1="order" name_1toN="orderings" state="1">
+		<related_field kind="source">
+			<field_ref uuid="66666666666677777777777788888888" name="orderID">
+				<table_ref uuid="46464646464646463030303030303030" name="Ordering"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="11111111111122222222222233333333" name="ID">
+				<table_ref uuid="99999999AAAAAAAA00000000BBBBBBBB" name="Orders"/>
+			</field_ref>
+		</related_field>
+	</relation>
+	<relation uuid="35483034334537463744394737414130" name_Nto1="product" name_1toN="orderings" state="1">
+		<related_field kind="source">
+			<field_ref uuid="99999999999900000000000011111111" name="productID">
+				<table_ref uuid="46464646464646463030303030303030" name="Ordering"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="AAAAAAAAAAAABBBBBBBBBBBBCCCCCCCC" name="ID">
+				<table_ref uuid="55555555666666667777777788888888" name="Products"/>
+			</field_ref>
+		</related_field>
+		<relation_extra>
+			<editor_relation_info>
+				<color red="255" green="255" blue="255" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<relation uuid="2C42A889A0764FB8BBA3208AA538DAC7" name_Nto1="packer" name_1toN="myOrdersToPack" state="1">
+		<related_field kind="source">
+			<field_ref uuid="FDE18AC19D7C44DB8BE24636D558BBA0" name="packerId">
+				<table_ref uuid="99999999AAAAAAAA00000000BBBBBBBB" name="Orders"/>
+			</field_ref>
+		</related_field>
+		<related_field kind="destination">
+			<field_ref uuid="44374543433032384646463535424730" name="ID">
+				<table_ref uuid="33443547373131344544313935323939" name="Employees"/>
+			</field_ref>
+		</related_field>
+		<relation_extra>
+			<editor_relation_info>
+				<color red="255" green="255" blue="255" alpha="0"/>
+			</editor_relation_info>
+		</relation_extra>
+	</relation>
+	<index kind="regular" unique_keys="true" uuid="0EB7743018B0434E93A7CE615C3D3632" type="7">
+		<field_ref uuid="1638CE980E7C43538715137E5A019E73" name="ID">
+			<table_ref uuid="D1AC304DA99F4E8D8318D30FD3F860CF" name="(Token)"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="304D3539384B324B3349384E32464632" type="7">
+		<field_ref uuid="99999999999900000000000011111111" name="productID">
+			<table_ref uuid="46464646464646463030303030303030" name="Ordering"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="36493135344738473945344A38424238" type="1">
+		<field_ref uuid="11111111111122222222222233333333" name="ID">
+			<table_ref uuid="99999999AAAAAAAA00000000BBBBBBBB" name="Orders"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="374A3236354839483046354B39434339" type="1">
+		<field_ref uuid="33333333333344444444444455555555" name="ID">
+			<table_ref uuid="46464646464646463030303030303030" name="Ordering"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="394C3438374A314A3248374D31454531" type="7">
+		<field_ref uuid="66666666666677777777777788888888" name="orderID">
+			<table_ref uuid="46464646464646463030303030303030" name="Ordering"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="B17E3BF54450493DB72FBD48A5745784" type="7">
+		<field_ref uuid="C6DBB917EEE44AF9BDA57ABA22C55C6B" name="ID">
+			<table_ref uuid="107A367EBCC346259FD971E8FC1097DA" name="(INFO)"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="D6D312637A8D448BAE53AB0B4A81E567" type="1">
+		<field_ref uuid="44374543433032384646463535424730" name="ID">
+			<table_ref uuid="33443547373131344544313935323939" name="Employees"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="D7F1DEA6C2C84AD18F638186FA67649B" type="7">
+		<field_ref uuid="D894794B0A2F4403B6CA758EC7CC1956" name="ID">
+			<table_ref uuid="0669BE50092E4F8DAF2270347F00E759" name="(MailCredentials)"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="E7E423748B9E559BCF64BC9C5B92F678" type="1">
+		<field_ref uuid="AAAAAAAAAAAABBBBBBBBBBBBCCCCCCCC" name="ID">
+			<table_ref uuid="55555555666666667777777788888888" name="Products"/>
+		</field_ref>
+	</index>
+	<index kind="regular" unique_keys="true" uuid="FE88F9CCE25347649EA43BD028C0BAF2" type="7">
+		<field_ref uuid="D244638E2F6E4877B09BEF88CBE372C0" name="ID">
+			<table_ref uuid="FDA2DF8AC6F74E358F9BD22F7A8E789A" name="Users"/>
+		</field_ref>
+	</index>
+	<base_extra package_name="HDI_Template_v18" structure_file_name="HowDoI" data_file_path=":HowDoI.4DD">
+		<journal_file journal_file_enabled="false"/>
+	</base_extra>
+</base>

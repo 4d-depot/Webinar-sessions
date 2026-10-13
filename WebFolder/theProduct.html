@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product</title>
+  <style>
+    :root {
+      --border: #d1d5db;
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --error: #b91c1c;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      padding: 24px;
+    }
+
+    .card {
+      max-width: 560px;
+      margin: 0 auto;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 1.4rem;
+    }
+
+    .row {
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 10px;
+      font-size: 0.95rem;
+      background: #f9fafb;
+      color: var(--text);
+    }
+
+    .photo-wrap {
+      margin-top: 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px;
+      min-height: 140px;
+      display: grid;
+      place-items: center;
+      background: #f9fafb;
+    }
+
+    img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      background: #ffffff;
+    }
+
+    .status {
+      min-height: 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .status.error {
+      color: var(--error);
+    }
+
+    .button-row-top {
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-result {
+      display: block;
+      margin: 10px auto 0;
+      width: 100%;
+      max-width: 360px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 10px;
+      background: #f9fafb;
+      resize: none;
+      min-height: 80px;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #166534;
+    }
+    
+     .search-info {
+      display: block;
+      margin: 10px auto 0;
+      width: 100%;
+      max-width: 360px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 10px;
+      background: #f9fafb;
+      resize: none;
+      min-height: 80px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .button-row-bottom {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .button-row-bottom > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .button-row-bottom .gray-button {
+      width: 100%;
+    }
+
+    .button-row-bottom .search-result {
+      max-width: 100%;
+    }
+
+    .gray-button {
+      border: 0;
+      border-radius: 12px;
+      background: #9ea0b8;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 12px 16px;
+      min-height: 52px;
+      cursor: pointer;
+    }
+
+    .gray-button:focus-visible {
+      outline: 2px solid #6b6f8f;
+      outline-offset: 2px;
+    }
+
+    .gray-button.large {
+      width: 100%;
+      max-width: 360px;
+    }
+
+    @media (max-width: 640px) {
+      .button-row-bottom {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Produit</h1>
+    <div id="status" class="status">Chargement...</div>
+
+    <div class="row">
+      <label for="name">Name</label>
+      <input id="name" type="text" readonly>
+    </div>
+
+    <div class="row">
+      <label for="price">Price</label>
+      <input id="price" type="text" readonly>
+    </div>
+
+    <div class="row">
+      <label for="quantityInStock">Quantity in stock</label>
+      <input id="quantityInStock" type="text" readonly style="font-weight: bold; color: #b91c1c;">
+    </div>
+
+    <div class="row">
+      <label>Photo</label>
+      <div class="photo-wrap">
+        <img id="photo" alt="Photo produit">
+      </div>
+    </div>
+
+    <div class="button-row-top">
+      <button type="button" id="searchInOtherWarehouses" class="gray-button large">Search in other wharehouses</button>
+    </div>
+    <textarea id="searchResult" class="search-result" readonly"></textarea>
+
+    <div class="button-row-bottom">
+      <div>
+        <button type="button" id="description" class="gray-button">Description</button>
+        <textarea id="descriptionResult" class="search-info" readonly></textarea>
+      </div>
+      <div>
+        <button type="button" id="moreDetails" class="gray-button">More details</button>
+        <textarea id="moreDetailsResult" class="search-info" readonly></textarea>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function formatPrice(value) {
+      var n = Number(value);
+      if (!Number.isFinite(n)) {
+        return "";
+      }
+      return n.toLocaleString("fr-FR", { style: "currency", currency: "EUR" });
+    }
+
+    function setField(id, value) {
+      var el = document.getElementById(id);
+      if (!el) {
+        return;
+      }
+      el.value = value == null ? "" : String(value);
+    }
+
+    async function loadProduct() {
+      var status = document.getElementById("status");
+      var photo = document.getElementById("photo");
+
+      try {
+        var response = await fetch("/4DACTION/loadProduct", { method: "GET" });
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status);
+        }
+
+        var text = await response.text();
+        var product;
+        try {
+          product = JSON.parse(text);
+        } catch (parseError) {
+          throw new Error("Reponse 4DACTION non JSON");
+        }
+
+        setField("name", product.name);
+        setField("price", formatPrice(product.price));
+        setField("quantityInStock", product.quantityInStock);
+
+        if (photo) {
+          photo.src = product.photo ? String(product.photo) : "";
+          photo.alt = product.name ? "Photo de " + String(product.name) : "Photo produit";
+        }
+
+        if (status) {
+          status.classList.remove("error");
+          status.textContent = "";
+        }
+      } catch (error) {
+        setField("name", "");
+        setField("price", "");
+        setField("quantityInStock", "");
+        if (photo) {
+          photo.removeAttribute("src");
+          photo.alt = "Photo indisponible";
+        }
+        if (status) {
+          status.classList.add("error");
+          status.textContent = "Erreur lors du chargement: " + error.message;
+        }
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", async function() {
+      var status = document.getElementById("status");
+      try {
+        var response = await fetch("/rest/$catalog/authentify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify([{ identifier: "Nora", password: "a" }])
+        });
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status);
+        }
+        var authentication = await response.json();
+        if (!authentication.result || authentication.result.authentified !== true) {
+          throw new Error("Identifiant ou mot de passe incorrect");
+        }
+        await loadProduct();
+      } catch (error) {
+        if (status) {
+          status.classList.add("error");
+          status.textContent = "Erreur lors de l'authentification: " + error.message;
+        }
+      }
+    });
+
+    document.getElementById("description").addEventListener("click", async function() {
+      var status = document.getElementById("status");
+      var descriptionResult = document.getElementById("descriptionResult");
+      try {
+        var response = await fetch("/4DACTION/getDescription", { method: "GET" });
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status);
+        }
+        var text = await response.text();
+        if (descriptionResult) {
+          descriptionResult.value = text;
+        }
+        if (status) {
+          status.classList.remove("error");
+          status.textContent = "";
+        }
+      } catch (error) {
+        if (descriptionResult) {
+          descriptionResult.value = "";
+        }
+        if (status) {
+          status.classList.add("error");
+          status.textContent = "Erreur: " + error.message;
+        }
+      }
+    });
+
+    document.getElementById("searchInOtherWarehouses").addEventListener("click", async function() {
+      var status = document.getElementById("status");
+      var searchResult = document.getElementById("searchResult");
+      try {
+        var response = await fetch("/4DACTION/searchInOtherWarehouses", { method: "GET" });
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status);
+        }
+        var text = await response.text();
+        if (searchResult) {
+          searchResult.value = text;
+        }
+        if (status) {
+          status.classList.remove("error");
+          status.textContent = "";
+        }
+      } catch (error) {
+        if (searchResult) {
+          searchResult.value = "";
+        }
+        if (status) {
+          status.classList.add("error");
+          status.textContent = "Erreur lors de la recherche: " + error.message;
+        }
+      }
+    });
+
+    document.getElementById("moreDetails").addEventListener("click", async function() {
+      var status = document.getElementById("status");
+      var moreDetailsResult = document.getElementById("moreDetailsResult");
+      try {
+        var response = await fetch("/4DACTION/moreDetails", { method: "GET" });
+        if (!response.ok) {
+          throw new Error("HTTP " + response.status);
+        }
+        var text = await response.text();
+        if (moreDetailsResult) {
+          moreDetailsResult.value = text;
+        }
+        if (status) {
+          status.classList.remove("error");
+          status.textContent = "";
+        }
+      } catch (error) {
+        if (moreDetailsResult) {
+          moreDetailsResult.value = "";
+        }
+        if (status) {
+          status.classList.add("error");
+          status.textContent = "Erreur: " + error.message;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

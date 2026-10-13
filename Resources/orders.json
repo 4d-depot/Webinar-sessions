@@ -1,0 +1,82 @@
+[
+  {
+    "orderDate": "2026-03-29",
+    "salesId": 2
+  },
+  {
+    "orderDate": "2026-03-31",
+    "salesId": 2
+  },
+  {
+    "orderDate": "2026-04-02",
+    "salesId": 2
+  },
+  {
+    "orderDate": "2026-04-04",
+    "salesId": 2
+  },
+  {
+    "orderDate": "2026-04-06",
+    "salesId": 2
+  },
+  {
+    "orderDate": "2026-04-08",
+    "salesId": 3
+  },
+  {
+    "orderDate": "2026-04-10",
+    "salesId": 3
+  },
+  {
+    "orderDate": "2026-04-12",
+    "salesId": 3
+  },
+  {
+    "orderDate": "2026-04-14",
+    "salesId": 2
+  },
+  {
+    "orderDate": "2026-04-16",
+    "salesId": 3
+  },
+  {
+    "orderDate": "2026-04-18",
+    "salesId": 3
+  },
+  {
+    "orderDate": "2026-04-20",
+    "salesId": 3
+  },
+  {
+    "orderDate": "2026-04-22",
+    "salesId": 2
+  },
+  {
+    "orderDate": "2026-04-24",
+    "salesId": 3
+  },
+  {
+    "orderDate": "2026-04-26",
+    "salesId": 3
+  },
+  {
+    "orderDate": "2026-04-28",
+    "salesId": 3
+  },
+  {
+    "orderDate": "2026-04-30",
+    "salesId": 2
+  },
+  {
+    "orderDate": "2026-05-02",
+    "salesId": 2
+  },
+  {
+    "orderDate": "2026-05-04",
+    "salesId": 2
+  },
+  {
+    "orderDate": "2026-05-06",
+    "salesId": 3
+  }
+]

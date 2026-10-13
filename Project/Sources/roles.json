@@ -1,0 +1,169 @@
+{
+	"forceLogin": true,
+	"restrictedByDefault": true,
+	"permissions": {
+		"allowed": [
+			{
+				"applyTo": "Products.getDescription",
+				"type": "method",
+				"execute": [
+					"readProductInfo"
+				]
+			},
+			{
+				"applyTo": "Products.getMoreDetails",
+				"type": "method",
+				"execute": [
+					"readProductInfo"
+				]
+			},
+			{
+				"applyTo": "Products.searchInOtherWharehouses",
+				"type": "method",
+				"execute": [
+					"readProductInfo"
+				]
+			},
+			{
+				"applyTo": "Employees",
+				"type": "dataclass",
+				"read": [
+					"basic",
+					"forAuthentication"
+				]
+			},
+			{
+				"applyTo": "SessionHelper.loadEmployee",
+				"type": "singletonMethod",
+				"execute": [
+					"basic"
+				]
+			},
+			{
+				"applyTo": "SessionHelper.isAuthentified",
+				"type": "singletonMethod",
+				"execute": [
+					"basic"
+				]
+			},
+			{
+				"applyTo": "Users",
+				"type": "dataclass",
+				"read": [
+					"forAuthentication"
+				]
+			},
+			{
+				"applyTo": "ds.authentify",
+				"type": "method",
+				"promote": [
+					"forAuthentication"
+				]
+			},
+			{
+				"applyTo": "Ordering.appliedDiscount",
+				"type": "attribute",
+				"read": [
+					"readDiscount"
+				]
+			},
+			{
+				"applyTo": "Ordering.finalPrice",
+				"type": "attribute",
+				"read": [
+					"readDiscount"
+				]
+			},
+			{
+				"applyTo": "Orders.price",
+				"type": "attribute",
+				"read": [
+					"readDiscount"
+				]
+			},
+			{
+				"applyTo": "Orders.load",
+				"type": "method",
+				"execute": [
+					"readOrders"
+				]
+			},
+			{
+				"applyTo": "Orders",
+				"type": "dataclass",
+				"read": [
+					"readOrders"
+				]
+			},
+			{
+				"applyTo": "Ordering",
+				"type": "dataclass",
+				"read": [
+					"readOrders"
+				]
+			},
+			{
+				"applyTo": "Products",
+				"type": "dataclass",
+				"read": [
+					"readOrders"
+				]
+			},
+			{
+				"applyTo": "Orders.getFirst",
+				"type": "method",
+				"execute": [
+					"readOrders"
+				]
+			}
+		]
+	},
+	"privileges": [
+		{
+			"id": "wSjz81TKKtMTwtKefwok7G",
+			"privilege": "readProductInfo",
+			"includes": []
+		},
+		{
+			"id": "emSKAwxokLXqJUpr7Fhadi",
+			"privilege": "basic",
+			"includes": []
+		},
+		{
+			"id": "8MFxp8iFXbE4fzLKm4A2HV",
+			"privilege": "forAuthentication",
+			"includes": []
+		},
+		{
+			"id": "4ZBu8mqC8JctVUBi1f29iU",
+			"privilege": "readDiscount",
+			"includes": []
+		},
+		{
+			"id": "kyQLSvAq3kxDL36pHpyUyq",
+			"privilege": "readOrders",
+			"includes": []
+		}
+	],
+	"roles": [
+		{
+			"id": "1QJEt1qhubWNSDdMNnzHuX",
+			"role": "Packer",
+			"privileges": [
+				"readOrders",
+				"basic",
+				"readProductInfo"
+			]
+		},
+		{
+			"id": "eLTz5saF2eUR6A3u4BcXvc",
+			"role": "SalesPeople",
+			"privileges": [
+				"readOrders",
+				"readDiscount",
+				"readProductInfo",
+				"basic"
+			]
+		}
+	]
+}

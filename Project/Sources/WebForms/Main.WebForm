@@ -1,0 +1,72 @@
+{
+	"metadata": {
+		"v": "1.0",
+		"datasources": [],
+		"styles": [],
+		"currentState": "root"
+	},
+	"components": {
+		"ROOT": {
+			"type": {
+				"resolvedName": "Container"
+			},
+			"isCanvas": true,
+			"props": {
+				"classNames": [],
+				"events": [
+					{
+						"type": "method",
+						"dataclass": "SessionHelper",
+						"events": [
+							"oninit"
+						],
+						"id": "as26QH9P5smDRfSFHtBazf",
+						"method": "SessionHelper.isAuthentified",
+						"params": [],
+						"datasource": "",
+						"methodType": "singleton",
+						"returns": {
+							"name": "result",
+							"type": "Object",
+							"datasource": "Navigation:whereToGo"
+						}
+					}
+				],
+				"airyMode": false,
+				"className": "bg-white w-full px-6",
+				"style": {
+					"paddingTop": "0px"
+				}
+			},
+			"displayName": "Page",
+			"custom": {},
+			"parent": "",
+			"hidden": false,
+			"nodes": [
+				"OkOucwYkG5"
+			],
+			"linkedNodes": {}
+		},
+		"OkOucwYkG5": {
+			"type": {
+				"resolvedName": "WebformLoader"
+			},
+			"isCanvas": false,
+			"props": {
+				"events": [],
+				"datasource": "Navigation:whereToGo.toDisplay",
+				"style": {
+					"height": "100%",
+					"width": "70%",
+					"paddingTop": "0px"
+				}
+			},
+			"displayName": "Page Loader",
+			"custom": {},
+			"parent": "ROOT",
+			"hidden": false,
+			"nodes": [],
+			"linkedNodes": {}
+		}
+	}
+}
